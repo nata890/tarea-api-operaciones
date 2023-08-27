@@ -5,6 +5,10 @@ app = Flask(__name__)
 @app.route('/suma', methods=['POST'])
 def suma():
     data = request.get_json()
+
+    if not ('numero_1' in data and 'numero_2' in data):
+        return jsonify({"error": "Debes ingresar ambos campos"})
+    
     numero_1 = data['numero_1']
     numero_2 = data['numero_2']
 
@@ -21,6 +25,10 @@ def suma():
 @app.route('/resta', methods=['POST'])
 def resta():
     data = request.get_json()
+
+    if not ('numero_1' in data and 'numero_2' in data):
+        return jsonify({"error": "Debes ingresar ambos campos"})
+    
     numero_1 = data['numero_1']
     numero_2 = data['numero_2']
 
@@ -37,6 +45,10 @@ def resta():
 @app.route('/multiplicacion', methods=['POST'])
 def multiplicacion():
     data = request.get_json()
+
+    if not ('numero_1' in data and 'numero_2' in data):
+        return jsonify({"error": "Debes ingresar ambos campos"})
+    
     numero_1 = data['numero_1']
     numero_2 = data['numero_2']
     
@@ -53,6 +65,10 @@ def multiplicacion():
 @app.route('/division', methods=['POST'])
 def division():
     data = request.get_json()
+
+    if not ('numero_1' in data and 'numero_2' in data):
+        return jsonify({"error": "Debes ingresar ambos campos"})
+    
     numero_1 = data['numero_1']
     numero_2 = data['numero_2']
     
