@@ -11,6 +11,15 @@ def suma():
 
     return jsonify({"suma": + resultado})
 
+@app.route('/resta', methods=['POST'])
+def resta():
+    data = request.get_json()
+    numero_1 = data['numero_1']
+    numero_2 = data['numero_2']
+    resultado = numero_1 - numero_2
+
+    return jsonify({"resta": + resultado})
+
 @app.route('/multiplicacion', methods=['POST'])
 def multiplicacion():
     data = request.get_json()
@@ -19,6 +28,15 @@ def multiplicacion():
     resultado = numero_1 * numero_2
 
     return jsonify({"multiplicacion": + resultado})
+
+@app.route('/division', methods=['POST'])
+def division():
+    data = request.get_json()
+    numero_1 = data['numero_1']
+    numero_2 = data['numero_2']
+    resultado = numero_1 / numero_2
+
+    return jsonify({"division": + resultado})
 
 if __name__ == '__main__':
     app.run(debug=True)
